@@ -1,0 +1,25 @@
+{
+  "name": "mqtt-chat-app",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node src/server/index.js"
+  },
+  "dependencies": {
+    "aedes": "^0.50.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.1",
+    "mqtt": "^5.3.3",
+    "websocket-stream": "^5.5.2"
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}

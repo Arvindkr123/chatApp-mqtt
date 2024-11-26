@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MQTT Chat App</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="chat-container">
+        <div class="header">
+          <h1>MQTT Chat</h1>
+          <div class="status-bar">
+            <div class="status-indicator">
+              <span id="connection-status" class="disconnected">Disconnected</span>
+            </div>
+            <div class="user-info">
+              <span id="client-id"></span>
+            </div>
+          </div>
+        </div>
+        <div id="messages" class="messages"></div>
+        <div class="input-area">
+          <input 
+            type="text" 
+            id="message-input" 
+            placeholder="Type your message..."
+            autocomplete="off"
+          >
+          <button id="send-button">Send</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
