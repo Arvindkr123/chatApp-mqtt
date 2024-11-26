@@ -13,8 +13,13 @@ import messageRoutes from './routes/messages.js';
 import userRoutes from './routes/users.js';
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // Adjust if necessary
+  methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
 
 mongoose.connect('mongodb://localhost:27017/chatapp')
   .then(() => console.log('Connected to MongoDB'))
