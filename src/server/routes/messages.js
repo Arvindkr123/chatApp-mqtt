@@ -33,18 +33,6 @@ router.post("/add", async (req, res) => {
 router.get("/:userId", auth, async (req, res) => {
   //console.log("reciver user id ", req.params.userId);
   try {
-
-    const updatedMessages = await Message.updateMany(
-      {
-        receiver: req.user._id,
-        sender: req.params.userId,
-        read: false // Assuming you only want to update unread messages
-      },
-      { $set: { read: true } } // Set the read field to true
-    );
-
-    await updatedMessages.save()
-
     const messages = await Message.find({
       $or: [
         { sender: req.user._id, receiver: req.params.userId },
